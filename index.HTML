@@ -257,10 +257,10 @@
 <div class="hero">
   <div class="hero-eyebrow">Governance + Legal Reference · April 2026</div>
   <h1>AI Policy and Legal Landscape</h1>
-  <p>A reference guide to U.S. federal rules, emerging legislation, and state AI laws as of April 2026. No single omnibus federal AI law yet, but obligations are real and growing.</p>
+  <p>A reference guide to federal rules, emerging legislation, and state AI laws as of April 2026. No single omnibus federal AI law yet, but obligations are real and growing.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="num">6</div><div class="lbl">Broad AI State Laws</div></div>
-    <div class="hero-stat"><div class="num">4</div><div class="lbl">Health AI State Laws</div></div>
+    <div class="hero-stat"><div class="num">7</div><div class="lbl">Health AI State Laws</div></div>
     <div class="hero-stat"><div class="num">2</div><div class="lbl">Content / Deepfake Laws</div></div>
     <div class="hero-stat"><div class="num">1</div><div class="lbl">Safety Sandbox Law</div></div>
   </div>
@@ -367,13 +367,13 @@
 <!-- STATE MAP -->
 <section id="state-map" class="full-section" style="max-width:100%; padding:4rem 2rem;">
 <div style="max-width:1200px; margin:0 auto">
-  <div class="section-label">State Health AI Landscape, 2026</div>
+  <div class="section-label">State AI Landscape</div>
 
   <!-- D3<!-- D3 Choropleth Map -->
   <div id="map-wrap" style="width:100%;max-width:960px;margin:0 auto 1.5rem;"></div>
   <script>
   (function() {
-    var passed   = ["WA","OR","ID","UT","IN","TN","AL","NY"];
+    var passed   = ["WA","OR","ID","UT","IL","TN","AL","NY"];
     var introduced = ["CA","NV","MT","CO","MN","WI","MI","IA","MO","IL","OH","KY","NC","VA","PA","NJ","CT","MA","MD","FL","GA","SC","ME","NH","VT","RI","SD","AR","LA","MS","DE"];
     var colorOf = function(id) {
       if (passed.indexOf(id) >= 0) return "#0E7C86";
@@ -535,7 +535,7 @@
       <div class="desc">Cross-sector governance, employment, consumer protection, or automated decision-making</div>
     </div>
     <div class="map-stat-card">
-      <div class="big">4</div>
+      <div class="big">7</div>
       <div class="lbl">Health AI Laws</div>
       <div class="desc">Healthcare, health communications, mental-health AI, or clinical oversight requirements</div>
     </div>
@@ -668,6 +668,15 @@
           <p style="font-size:0.88rem; color:var(--light)">Requires disclosures or oversight when AI is used in healthcare interactions or plan determinations. Included in Manatt's count of states with at least one health-AI law as of April 7, 2026.</p>
         </div>
       </div>
+      <div class="state-card">
+        <div class="state-badge health">NY</div>
+        <div class="state-content">
+          <span class="tag tag-health">Health AI</span>
+          <h3>AI Companion Models Law</h3>
+          <div class="bill">Effective: November 25, 2025</div>
+          <p style="font-size:0.88rem; color:var(--light)">Operators must use reasonable efforts to detect suicidal ideation or self-harm in users, refer users to crisis resources, and clearly notify users they are interacting with AI rather than a human.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -710,7 +719,7 @@
 <footer>
   <p style="margin-bottom:0.5rem; color:var(--light); font-weight:600">AI Legal Landscape — April 2026 | Health-Vision.AI, LLC</p>
   <p>Sources: Manatt Health AI Policy Tracker (Apr 9, 2026) · FDA guidance · OMB Memo M-25-22 · FTC enforcement · NIST AI RMF · risktemplate.com · healthcarelawinsights.com · aiLawsByState.com</p>
-  <p style="margin-top:0.75rem; color:var(--muted)">This reference is for informational purposes only and does not constitute legal advice.</p>
+  <p style="margin-top:0.75rem; color:var(--muted)">This reference is for informational purposes only and DOES NOT constitute Legal Advice.</p>
 </footer>
 
 <script>
