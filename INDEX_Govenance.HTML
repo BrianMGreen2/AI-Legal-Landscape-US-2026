@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Governance Framework — 9 Essential Domains · v4 · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #f8f7f4;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+:root {
+  --navy:   #0f2137;
+  --navy2:  #1a3050;
+  --teal:   #0e6b7a;
+  --teal3:  #22a8bc;
+  --cream:  #f8f7f4;
+  --warm:   #f0ede6;
+  --border: #ddd9d0;
+  --muted:  #6b7280;
+  --white:  #ffffff;
+  --c1: #0e6b7a;
+  --c2: #7c3aed;
+  --c3: #b45309;
+  --c4: #065f46;
+  --c5: #be123c;
+  --c6: #1d4ed8;
+  --c7: #0e7490;
+  --c8: #374151;
+  --c9: #92400e;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--teal);
+}
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.site-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+}
+.site-title em {
+  color: var(--teal3);
+  font-style: normal;
+  margin-left: 8px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 40px 28px 36px;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal3) 30%, #e8940a 70%, transparent);
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal3);
+  margin-bottom: 12px;
+}
+.hero-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin-bottom: 24px;
+}
+
+/* ── TWO-BOX ROW ── */
+.hero-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 860px;
+}
+@media (max-width: 620px) {
+  .hero-boxes { grid-template-columns: 1fr; }
+}
+
+.hero-box {
+  border-radius: 5px;
+  padding: 16px 20px;
+}
+.hero-box-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hero-box p {
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.hb-def {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-left: 3px solid var(--teal3);
+}
+.hb-def .hero-box-label { color: var(--teal3); }
+.hb-def p { color: rgba(255,255,255,.82); }
+
+.hb-agentic {
+  background: rgba(232,148,10,.07);
+  border: 1px solid rgba(232,148,10,.2);
+  border-left: 3px solid #e8940a;
+}
+.hb-agentic .hero-box-label { color: #e8a020; }
+.hb-agentic p { color: rgba(255,255,255,.78); }
+
+/* ── MAIN ── */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 28px 64px;
+}
+
+/* ── SECTION HEAD ── */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin-top: 32px;
+}
+.section-head:first-child { margin-top: 0; }
+.section-head h2 {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+}
+.section-head span {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  color: var(--muted);
+}
+
+/* ── DOMAIN GRID — LANDSCAPE: 3 cols for Foundation/Operations, 1 for D9 ── */
+.domain-grid {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 0;
+}
+.domain-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.domain-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.domain-grid.cols-1 { grid-template-columns: 1fr; }
+
+@media (max-width: 900px) {
+  .domain-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .domain-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .domain-grid.cols-3,
+  .domain-grid.cols-4 { grid-template-columns: 1fr; }
+}
+
+/* ── DOMAIN CARD ── */
+.domain-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .18s, transform .18s;
+}
+.domain-card:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+.domain-card-top {
+  padding: 13px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.domain-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-top: 3px;
+  letter-spacing: 1px;
+}
+.domain-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  border: 1px solid;
+}
+.domain-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+.domain-card-body {
+  padding: 12px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.domain-card-body p {
+  font-size: 12.5px;
+  color: #3d4552;
+  line-height: 1.7;
+}
+.agentic-note {
+  background: #fef9ec;
+  border: 1px solid #f5d97a;
+  border-radius: 3px;
+  padding: 7px 10px;
+  font-size: 11.5px;
+  color: #713f12;
+  line-height: 1.55;
+  margin-top: auto;
+}
+.agentic-note strong {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #92400e;
+  margin-bottom: 3px;
+}
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: .5px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+/* ── D9 WIDE CARD ── */
+.d9-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 700px) {
+  .d9-inner { grid-template-columns: 1fr; }
+}
+.d9-sub {
+  background: #fffbf5;
+  border: 1px solid rgba(146,64,14,.2);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+.d9-sub-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #92400e;
+  margin-bottom: 5px;
+}
+.d9-sub p { font-size: 11.5px; color: #3d4552; line-height: 1.6; }
+.d9-agentic {
+  background: #fef4e8;
+  border: 1px solid #d97706;
+  border-radius: 3px;
+  padding: 8px 11px;
+  font-size: 11.5px;
+  color: #713f12;
+  line-height: 1.55;
+}
+.d9-agentic strong {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #92400e;
+  margin-bottom: 3px;
+}
+
+/* ── LEGAL SIDE-BY-SIDE ── */
+.legal-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .legal-grid { grid-template-columns: 1fr; }
+}
+.legal-note {
+  background: var(--warm);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 16px 18px;
+}
+.legal-note-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.legal-note p {
+  font-size: 12px;
+  color: #3d4552;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.legal-note p:last-child { margin-bottom: 0; }
+
+
+/* ── BULLET LISTS ── */
+.card-list {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card-list li {
+  font-size: 12.5px;
+  color: #3d4552;
+  line-height: 1.6;
+}
+.card-list.small li { font-size: 11.5px; }
+.agentic-list {
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+.agentic-list li {
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+
+/* ── D9 RIGHTS SUB-BOXES (distinct from agentic yellow) ── */
+.d9-rights-sub {
+  background: #f0f4f8;
+  border: 1px solid #b0bec5;
+  border-top: 3px solid #546e7a;
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+.d9-rights-sub .d9-sub-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #37474f;
+  margin-bottom: 6px;
+}
+.d9-rights-sub .card-list li { color: #3d4552; }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 18px 28px;
+  text-align: center;
+}
+.site-footer p {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.28);
+  line-height: 1.8;
+}
+
+/* ── DOMAIN COLOR SETS ── */
+/* Each .dN sets badge color, top border, and tag colors */
+.d1 .domain-badge { background: rgba(14,107,122,.1); color: var(--c1); border-color: rgba(14,107,122,.25); }
+.d1 .domain-card-top { border-top: 3px solid var(--c1); }
+.d1 .tag { color: var(--c1); border-color: rgba(14,107,122,.25); background: rgba(14,107,122,.06); }
+
+.d2 .domain-badge { background: rgba(124,58,237,.1); color: var(--c2); border-color: rgba(124,58,237,.25); }
+.d2 .domain-card-top { border-top: 3px solid var(--c2); }
+.d2 .tag { color: var(--c2); border-color: rgba(124,58,237,.25); background: rgba(124,58,237,.06); }
+
+.d3 .domain-badge { background: rgba(180,83,9,.1); color: var(--c3); border-color: rgba(180,83,9,.25); }
+.d3 .domain-card-top { border-top: 3px solid var(--c3); }
+.d3 .tag { color: var(--c3); border-color: rgba(180,83,9,.25); background: rgba(180,83,9,.06); }
+
+.d4 .domain-badge { background: rgba(6,95,70,.1); color: var(--c4); border-color: rgba(6,95,70,.25); }
+.d4 .domain-card-top { border-top: 3px solid var(--c4); }
+.d4 .tag { color: var(--c4); border-color: rgba(6,95,70,.25); background: rgba(6,95,70,.06); }
+
+.d5 .domain-badge { background: rgba(190,18,60,.1); color: var(--c5); border-color: rgba(190,18,60,.25); }
+.d5 .domain-card-top { border-top: 3px solid var(--c5); }
+.d5 .tag { color: var(--c5); border-color: rgba(190,18,60,.25); background: rgba(190,18,60,.06); }
+
+.d6 .domain-badge { background: rgba(29,78,216,.1); color: var(--c6); border-color: rgba(29,78,216,.25); }
+.d6 .domain-card-top { border-top: 3px solid var(--c6); }
+.d6 .tag { color: var(--c6); border-color: rgba(29,78,216,.25); background: rgba(29,78,216,.06); }
+
+.d7 .domain-badge { background: rgba(14,116,144,.1); color: var(--c7); border-color: rgba(14,116,144,.25); }
+.d7 .domain-card-top { border-top: 3px solid var(--c7); }
+.d7 .tag { color: var(--c7); border-color: rgba(14,116,144,.25); background: rgba(14,116,144,.06); }
+
+.d8 .domain-badge { background: rgba(55,65,81,.1); color: var(--c8); border-color: rgba(55,65,81,.25); }
+.d8 .domain-card-top { border-top: 3px solid var(--c8); }
+.d8 .tag { color: var(--c8); border-color: rgba(55,65,81,.25); background: rgba(55,65,81,.06); }
+
+.d9 .domain-badge { background: rgba(146,64,14,.1); color: var(--c9); border-color: rgba(146,64,14,.3); }
+.d9 .domain-card-top { border-top: 3px solid var(--c9); background: #fffbf5; }
+.d9 .tag { color: var(--c9); border-color: rgba(146,64,14,.25); background: rgba(146,64,14,.06); }
+.d9.domain-card { border: 2px solid rgba(146,64,14,.25); }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <span class="site-title">AI Governance · 2026 <em>· 9 Essential Domains</em></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">AI Governance Reference · Builders Conference · May 7, 2026 · Philadelphia</div>
+    <h1 class="hero-title">AI Governance Framework</h1>
+    <div class="hero-boxes">
+      <div class="hero-box hb-def">
+        <div class="hero-box-label">What Is AI Governance</div>
+        <p>Rules for how AI behaves, who is responsible when something goes wrong, and how problems are caught early.</p>
+      </div>
+      <div class="hero-box hb-agentic">
+        <div class="hero-box-label">The Agentic Era Changes Everything</div>
+        <p>When AI moves from answering to acting, every domain gets harder. Agents act sequentially — often without human oversight at each step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- FOUNDATION -->
+  <div class="section-head">
+    <h2>Foundation</h2>
+    <span>Domains 1–3 · Required before AI deployment</span>
+  </div>
+
+  <div class="domain-grid cols-3">
+
+    <div class="domain-card d1">
+      <div class="domain-card-top">
+        <span class="domain-num">01</span>
+        <div><span class="domain-badge">Prerequisite</span><h3>Data Governance</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Define data ownership, access rights, and model input rules</li>
+          <li>Ensure all outputs can be sourced and audited</li>
+          <li>Without this layer, more powerful AI produces more confident wrong answers</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Agents write data — governance must cover what they can modify, not just access</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Data Ownership</span><span class="tag">Model Input Rules</span><span class="tag">Audit Trails</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-card d2">
+      <div class="domain-card-top">
+        <span class="domain-num">02</span>
+        <div><span class="domain-badge">Foundation Layer</span><h3>Risk Classification &amp; Management</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Classify use cases as low, medium, or high risk</li>
+          <li>Set approval thresholds and human oversight requirements per tier</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Low-risk errors compound — step one can cascade into a high-impact outcome by step five</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Risk Tiers</span><span class="tag">Approval Thresholds</span><span class="tag">Escalation Protocols</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-card d3">
+      <div class="domain-card-top">
+        <span class="domain-num">03</span>
+        <div><span class="domain-badge">Foundation Layer</span><h3>Accountability &amp; Decision Rights</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Document who approved each system and owns its outcomes</li>
+          <li>Designate a human in the loop at each consequential decision point</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>The business line that authorized the automation owns the outcome — design through deployment</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">RACI Framework</span><span class="tag">Human-in-the-Loop</span><span class="tag">Steering Committee</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- OPERATIONS -->
+  <div class="section-head">
+    <h2>Operations</h2>
+    <span>Domains 4–7 · Continuous management in production</span>
+  </div>
+
+  <div class="domain-grid cols-4">
+
+    <div class="domain-card d4">
+      <div class="domain-card-top">
+        <span class="domain-num">04</span>
+        <div><span class="domain-badge">Operational</span><h3>Ethics &amp; Bias Oversight</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Bias testing, fairness metrics, regular model reviews</li>
+          <li>Ongoing function — not a one-time launch check</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Bias compounds across chains — a skew in agent one becomes systematic by agent five</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Bias Testing</span><span class="tag">Model Reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-card d5">
+      <div class="domain-card-top">
+        <span class="domain-num">05</span>
+        <div><span class="domain-badge">Operational</span><h3>Security &amp; Access Control</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Minimum permissions per task — no more</li>
+          <li>Address AI-specific risks: prompt injection, unauthorized tool use</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Exploited agents act in the real world — not just output text</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Permission Scoping</span><span class="tag">Prompt Injection</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-card d6">
+      <div class="domain-card-top">
+        <span class="domain-num">06</span>
+        <div><span class="domain-badge">Operational</span><h3>Transparency &amp; Explainability</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Explain what any AI system did and why — to regulators and stakeholders</li>
+          <li>A regulatory requirement and an operational necessity</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Longer chains make explainability harder — design for it from day one</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Decision Rationale</span><span class="tag">Regulatory Reporting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-card d7">
+      <div class="domain-card-top">
+        <span class="domain-num">07</span>
+        <div><span class="domain-badge">Operational</span><h3>Monitoring &amp; Auditability</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Track AI behavior in production — governance does not end at launch</li>
+          <li>Monitor for output drift, scope creep, and threshold calibration</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Drift happens through accumulated small decisions — monitor behavior, not just errors</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Drift Detection</span><span class="tag">Incident Logging</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPLIANCE -->
+  <div class="section-head">
+    <h2>Compliance &amp; Legal</h2>
+    <span>Domain 8 · The framework that makes governance enforceable</span>
+  </div>
+
+  <div class="legal-grid">
+    <div class="domain-card d8">
+      <div class="domain-card-top">
+        <span class="domain-num">08</span>
+        <div><span class="domain-badge">Compliance</span><h3>Legal &amp; Regulatory Compliance</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list">
+          <li>Contracts, liability allocation, industry regulations, internal audit</li>
+          <li>Legal counsel is the partner that makes governance enforceable and defensible</li>
+        </ul>
+        <div class="agentic-note">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list">
+            <li>Automated decision liability is the fastest-growing AI legal risk — proactive partnership builds defensible ground now</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Contracts &amp; Liability</span><span class="tag">Industry Regulations</span><span class="tag">Internal Audit</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal-note">
+      <div class="legal-note-label">Legal as a Governance Partner</div>
+      <ul class="card-list" style="color:#3d4552;">
+        <li>Legal translates governance decisions into enforceable frameworks</li>
+        <li>Early involvement — at design, not just review — prevents the costliest exposures</li>
+        <li>The strongest programs treat legal as a strategic partner across all nine domains</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTENT RIGHTS -->
+  <div class="section-head">
+    <h2>Content &amp; Asset Rights</h2>
+    <span>Domain 9 · For organizations whose IP is consumed by AI</span>
+  </div>
+
+  <div class="domain-grid cols-1">
+    <div class="domain-card d9">
+      <div class="domain-card-top">
+        <span class="domain-num">09</span>
+        <div><span class="domain-badge">Emerging Domain</span><h3>Content &amp; Asset Rights Governance</h3></div>
+      </div>
+      <div class="domain-card-body">
+        <ul class="card-list" style="margin-bottom:12px;">
+          <li>Domains 1–8 govern AI <em>deployers</em> — Domain 9 governs IP holders whose content is <strong>consumed by others' AI</strong></li>
+          <li>Establish rights, compensation, and accountability for what others' AI does with your assets</li>
+        </ul>
+        <div class="d9-inner">
+          <div class="d9-rights-sub">
+            <div class="d9-sub-label">Licensing Framework</div>
+            <ul class="card-list small">
+              <li>Ratify access tiers and compensation internally before any negotiation</li>
+            </ul>
+          </div>
+          <div class="d9-rights-sub">
+            <div class="d9-sub-label">Telemetry &amp; Audit Rights</div>
+            <ul class="card-list small">
+              <li>Require contractual rights to verify usage — without telemetry, compensation is unenforceable</li>
+            </ul>
+          </div>
+          <div class="d9-rights-sub">
+            <div class="d9-sub-label">Derivative Use Policy</div>
+            <ul class="card-list small">
+              <li>Define permissible AI-derived outputs — synthesis and summarization require explicit contract language</li>
+            </ul>
+          </div>
+        </div>
+        <div class="d9-agentic">
+          <strong>Agentic Shift</strong>
+          <ul class="agentic-list" style="color:#713f12;">
+            <li>Agents obscure content sources across multi-step processes — rights evolve faster than standards</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Content Licensing</span><span class="tag">IP Rights</span><span class="tag">Telemetry &amp; Audit</span><span class="tag">Derivative Use Policy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>AI Governance Framework — 9 Essential Domains · Builders Conference · May 7, 2026 · Philadelphia</p>
+  <p style="margin-top:4px;">Presented by Beyond Frequency LLC · beyondfrequency.com</p>
+  <p style="margin-top:8px;">This reference is for informational purposes only and does not constitute legal advice.</p>
+</footer>
+
+</body>
+</html>
